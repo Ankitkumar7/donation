@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Person(models.Model):
-    name = models.CharField(max_length=130)
-    email = models.EmailField(blank=True)
-    job_title = models.CharField(max_length=30, blank=True)
-    bio = models.TextField(blank=True)
+    full_name = models.CharField(max_length=130, blank=False)
+    mobile_number = models.IntegerField(max_length=10, blank=False)
+    email = models.EmailField(blank=False)
+    address = models.TextField(blank=True)

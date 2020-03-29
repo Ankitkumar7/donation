@@ -1,23 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <p>
-    <a href="{% url 'person_add' %}" class="btn btn-primary">Add person</a>
+  <p style="text-align: center;">
+    <div class="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_EY1Nq6TUcNId8B/view" data-text="SUPPORT OLA DRIVER" data-color="#528FF0" data-size="large">
+      <script>
+        
+        (function(){
+          var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
+          if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
+          s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
+          rzp && rzp.init && rzp.init()}})();
+      </script>
+    </div>
+    <!-- <a href="{% url 'person_add' %}" class="btn btn-success" style="font-weight: bold;">SUPPORT OLA DRIVER</a> -->
   </p>
+  <br>
+  
   <table class="table table-bordered">
     <thead>
       <tr>
         <th>Name</th>
         <th>Email</th>
-        <th>Job Title</th>
+        <th>Amount</th>
       </tr>
     </thead>
     <tbody>
       {% for person in people %}
         <tr>
-          <td><a href="{% url 'person_edit' person.pk %}">{{ person.name }}</a></td>
+          <td>{{ person.full_name }}</td>
           <td>{{ person.email }}</td>
-          <td>{{ person.job_title }}</td>
+          <td>₹1</td>
         </tr>
       {% empty %}
         <tr class="table-active">

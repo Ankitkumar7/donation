@@ -7,14 +7,26 @@
     {% csrf_token %}
     <div class="row">
       <div class="col-6">
-        {{ form.name|as_crispy_field }}
+        {{ form.full_name|as_crispy_field }}
       </div>
       <div class="col-6">
         {{ form.email|as_crispy_field }}
       </div>
     </div>
-    {{ form.job_title|as_crispy_field }}
-    {{ form.bio|as_crispy_field }}
-    <button type="submit" class="btn btn-success">Save person</button>
+    {{ form.mobile_number|as_crispy_field }}
+    {{ form.address|as_crispy_field }}
+    <!-- <button type="submit" class="btn btn-success">DONATE NOW</button> -->
+    
+
+    <div type="submit" class="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_EY1Nq6TUcNId8B/view" data-text="SUPPORT OLA DRIVER" data-color="#528FF0" data-size="large">
+      <script>
+        
+        (function(){
+          var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
+          if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
+          s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
+          rzp && rzp.init && rzp.init()}})();
+      </script>
+    </div>
   </form>
 {% endblock %}
